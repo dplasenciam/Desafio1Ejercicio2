@@ -50,5 +50,13 @@ public class FigurasService {
           
     }
 
+    public void calcularAreaTriangulo(Triangulo t){
+        float area;
+        area = t.getAltura()*t.getBase();
+        t.setArea(area);
+    }
     
+    public float getAreaTriangulo(Triangulo t){
+        return t.getArea();
+    }
 }
