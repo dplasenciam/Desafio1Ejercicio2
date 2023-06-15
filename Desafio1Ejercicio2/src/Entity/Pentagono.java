@@ -14,6 +14,9 @@ public class Pentagono {
     private float apotema;
     private float perimetro;
     private float lado;
+    private float area;
+
+    
 
     public Pentagono() {
     }
@@ -50,6 +53,13 @@ public class Pentagono {
         this.lado = lado;
     }
 
+    public float getArea() {
+        return area;
+    }
+
+    public void setArea(float area) {
+        this.area = area;
+    }
     
     
     

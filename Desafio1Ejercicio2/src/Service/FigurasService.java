@@ -18,9 +18,10 @@ import java.util.Set;
  */
 public class FigurasService {
     
+    Scanner leer = new Scanner(System.in);
 
     public Pentagono crearPentagono(){
-        Scanner leer = new Scanner(System.in);
+        
         
         System.out.println("Digite valor Lado");
         float lado = leer.nextFloat();
@@ -31,9 +32,12 @@ public class FigurasService {
         return p1;
     } 
     
-
-    Scanner leer = new Scanner(System.in);
-    
+    public void calcularAreaPentagono(Pentagono p){
+        float area;
+        area = (p.getPerimetro() * p.getApotema()) /2;
+        p.setArea(area);
+    }
+     
     public Triangulo crearTriangulo(){
         
         float base,altura;
