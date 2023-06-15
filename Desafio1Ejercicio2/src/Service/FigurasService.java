@@ -128,4 +128,58 @@ public class FigurasService {
         return p.getArea();
     }
 
+
+public Rectangulo crearRectangulo(){
+        
+        float base;
+	    float altura;
+        
+        System.out.println("Usted está creando un rectángulo");
+        Rectangulo rect = new Rectangulo();  
+        while(true){
+            System.out.print("Ingrese la base: ");
+            base = leer.nextFloat();
+            
+            if (base<=0){
+                System.out.println("Por favor ingrese un valor positivo para la base\nIntente nuevamente");
+            } else{
+                rect.setBase(base);
+                break;
+            }
+        }
+        while(true){
+            System.out.print("Ingrese la altura: ");
+            altura = leer.nextFloat();
+            
+            if (altura<=0){
+                System.out.println("Por favor ingrese un valor positivo para la altura\nIntente nuevamente");
+            } else{
+                rect.setBase(base);
+                break;
+            }
+        }
+       
+        return rect;         
+    }
+
+    public void calcularAreaRectangulo(Rectangulo rect){
+        float area;
+        area = (rect.getBase())*(rect.getAltura());
+        rect.setArea(area);
+    }
+    
+    public float getAreaRectangulo(Rectangulo rect){
+        return rect.getArea();
+    }
+
+    public void calcularPerimetroRectangulo(Rectangulo rect){
+        float perimetro;
+        perimetro = 2*(rect.getBase()+rect.getAltura());
+        rect.setPerimetro(perimetro);
+    }
+    
+    public float getPerimetroRectangulo(Rectangulo rect){
+        return rect.getPerimetro();
+    }    
+    
 }
