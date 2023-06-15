@@ -80,8 +80,52 @@ public class FigurasService {
     public float getAreaTriangulo(Triangulo t){
         return t.getArea();
     }
+
+
+    public Circulo crearCirculo(){
+        
+        float radio;
+        
+        System.out.println("Usted está creando un circulo");
+        Circulo circ = new Circulo();  
+        while(true){
+            System.out.print("Ingrese el radio: ");
+            radio = leer.nextFloat();
+            
+            if (radio<0){
+                System.out.println("Por favor ingrese un valor de radio positivo\nIntente nuevamente");
+            } else{
+                circ.setRadio(radio);
+                break;
+            }
+        }       
+        return circ;         
+    }
+
+    public void calcularAreaCirculo(Circulo circ){
+        float area;
+        area = Math.PI * Math.Pow(circ.getRadio(),2);
+        circ.setArea(area);
+    }
+    
+    public float getAreaCirculo(Circulo circ){
+        return circ.getArea();
+    }
+
+    public void calcularPerimetroCirculo(Circulo circ){
+        float perimetro;
+        perimetro = 2* Math.PI * (circ.getRadio());
+        circ.setPerimetro(perimetro);
+    }
+    
+    public float getPerimetroCirculo(Circulo circ){
+        return circ.getPerimetro();
+    }
+    
+
     
     public float getAreaPentagono(Pentagono p){
         return p.getArea();
     }
+
 }
