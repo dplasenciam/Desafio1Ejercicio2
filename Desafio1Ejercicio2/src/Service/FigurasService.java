@@ -132,7 +132,7 @@ public class FigurasService {
 public Rectangulo crearRectangulo(){
         
         float base;
-	    float altura;
+	float altura;
         
         System.out.println("Usted está creando un rectángulo");
         Rectangulo rect = new Rectangulo();  
@@ -181,5 +181,63 @@ public Rectangulo crearRectangulo(){
     public float getPerimetroRectangulo(Rectangulo rect){
         return rect.getPerimetro();
     }    
+
+
+public Rombo crearRombo(){
+        
+        float diagMayor;
+	float diagMenor;
+        
+        System.out.println("Usted está creando un rombo");
+        Rombo rom = new Rombo();  
+        while(true){
+            System.out.print("Ingrese la diagonal mayor: ");
+            diagMayor = leer.nextFloat();
+            
+            if (diagMayor<=0){
+                System.out.println("Por favor ingrese un valor positivo para la diagonal mayor\nIntente nuevamente");
+            } else{
+                rom.setDiagMayor(diagMayor);
+                break;
+            }
+        }
+        while(true){
+            System.out.print("Ingrese la diagonal menor: ");
+            diagMenor = leer.nextFloat();
+            
+            if (diagMenor<=0){
+                System.out.println("Por favor ingrese un valor positivo para la diagonal menor\nIntente nuevamente");
+            } else{
+                rom.setDiagMenor(diagMenor);
+                break;
+            }
+        }
+       
+        return rom;         
+    }
+
+    public void calcularAreaRombo(Rombo rom){
+        float area;
+        area = (rom.getDiagMayor())*(rom.getDiagMenor())/2;
+        rom.setArea(area);
+    }
     
+    public float getAreaRombo(Rombo rom){
+        return rom.getArea();
+    }
+
+    public void calcularPerimetroRombo(Rombo rom){
+        float a, b, c, perimetro;
+	a = (rom.getDiagMayor())/2;
+	b = (rom.getDiagMenor())/2;
+	c = Math.Pow((Math.Pow(a,2) + Math.Pow(b,2)),0.5)
+        perimetro = 4*c;
+        rom.setPerimetro(perimetro);
+    }
+    
+    public float getPerimetroRombo(Rombo rom){
+        return rom.getPerimetro();
+    }	
+
+	
 }
