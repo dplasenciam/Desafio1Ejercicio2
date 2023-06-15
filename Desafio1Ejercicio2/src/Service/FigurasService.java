@@ -27,7 +27,7 @@ public class FigurasService {
         float lado = leer.nextFloat();
         System.out.println("Digite valor Apotema");
         float apotema = leer.nextFloat();
-        float perimetro = 6 *lado;
+        float perimetro = 5 *lado;
         Pentagono p1 = new Pentagono(lado, apotema, perimetro);
         return p1;
     } 
@@ -62,7 +62,7 @@ public class FigurasService {
             if (altura<0){
                 System.out.println("Usted no ingreso una altura mayor a 0\nIntente de nuevo");
             } else{
-                t.setBase(base);
+                t.setAltura(altura);
                 break;
             }
         }
@@ -73,13 +73,14 @@ public class FigurasService {
 
     public void calcularAreaTriangulo(Triangulo t){
         float area;
-        area = t.getAltura()*t.getBase();
+        area = (t.getAltura() * t.getBase())/2;
         t.setArea(area);
     }
     
     public float getAreaTriangulo(Triangulo t){
         return t.getArea();
     }
+
 
     public Circulo crearCirculo(){
         
@@ -121,4 +122,10 @@ public class FigurasService {
         return circ.getPerimetro();
     }
     
+
+    
+    public float getAreaPentagono(Pentagono p){
+        return p.getArea();
+    }
+
 }

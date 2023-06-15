@@ -11,4 +11,7 @@ package Entity;
  */
 public class Cuadrado {
     
+    //final string 
+    
+    
 }
