@@ -128,4 +128,116 @@ public class FigurasService {
         return p.getArea();
     }
 
+
+public Rectangulo crearRectangulo(){
+        
+        float base;
+	float altura;
+        
+        System.out.println("Usted está creando un rectángulo");
+        Rectangulo rect = new Rectangulo();  
+        while(true){
+            System.out.print("Ingrese la base: ");
+            base = leer.nextFloat();
+            
+            if (base<=0){
+                System.out.println("Por favor ingrese un valor positivo para la base\nIntente nuevamente");
+            } else{
+                rect.setBase(base);
+                break;
+            }
+        }
+        while(true){
+            System.out.print("Ingrese la altura: ");
+            altura = leer.nextFloat();
+            
+            if (altura<=0){
+                System.out.println("Por favor ingrese un valor positivo para la altura\nIntente nuevamente");
+            } else{
+                rect.setBase(base);
+                break;
+            }
+        }
+       
+        return rect;         
+    }
+
+    public void calcularAreaRectangulo(Rectangulo rect){
+        float area;
+        area = (rect.getBase())*(rect.getAltura());
+        rect.setArea(area);
+    }
+    
+    public float getAreaRectangulo(Rectangulo rect){
+        return rect.getArea();
+    }
+
+    public void calcularPerimetroRectangulo(Rectangulo rect){
+        float perimetro;
+        perimetro = 2*(rect.getBase()+rect.getAltura());
+        rect.setPerimetro(perimetro);
+    }
+    
+    public float getPerimetroRectangulo(Rectangulo rect){
+        return rect.getPerimetro();
+    }    
+
+
+public Rombo crearRombo(){
+        
+        float diagMayor;
+	float diagMenor;
+        
+        System.out.println("Usted está creando un rombo");
+        Rombo rom = new Rombo();  
+        while(true){
+            System.out.print("Ingrese la diagonal mayor: ");
+            diagMayor = leer.nextFloat();
+            
+            if (diagMayor<=0){
+                System.out.println("Por favor ingrese un valor positivo para la diagonal mayor\nIntente nuevamente");
+            } else{
+                rom.setDiagMayor(diagMayor);
+                break;
+            }
+        }
+        while(true){
+            System.out.print("Ingrese la diagonal menor: ");
+            diagMenor = leer.nextFloat();
+            
+            if (diagMenor<=0){
+                System.out.println("Por favor ingrese un valor positivo para la diagonal menor\nIntente nuevamente");
+            } else{
+                rom.setDiagMenor(diagMenor);
+                break;
+            }
+        }
+       
+        return rom;         
+    }
+
+    public void calcularAreaRombo(Rombo rom){
+        float area;
+        area = (rom.getDiagMayor())*(rom.getDiagMenor())/2;
+        rom.setArea(area);
+    }
+    
+    public float getAreaRombo(Rombo rom){
+        return rom.getArea();
+    }
+
+    public void calcularPerimetroRombo(Rombo rom){
+        float a, b, c, perimetro;
+	a = (rom.getDiagMayor())/2;
+	b = (rom.getDiagMenor())/2;
+	c = Math.Pow((Math.Pow(a,2) + Math.Pow(b,2)),0.5)
+        perimetro = 4*c;
+        rom.setPerimetro(perimetro);
+    }
+    
+    public float getPerimetroRombo(Rombo rom){
+        return rom.getPerimetro();
+    }	
+
+	
 }
